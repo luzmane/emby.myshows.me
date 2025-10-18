@@ -28,29 +28,35 @@ namespace EmbyMyShowsMe.OAuth
 
         public async Task<(OAuthToken, OAuthError)> GetToken(string login, string password)
         {
-            var formContent = new FormUrlEncodedContent(new[]
+            var list = new List<KeyValuePair<string, string>>()
             {
                 new KeyValuePair<string, string>("grant_type", "password"),
                 new KeyValuePair<string, string>("client_id", ApiConstants.ClientId),
                 new KeyValuePair<string, string>("client_secret", ApiConstants.ClientSecret),
                 new KeyValuePair<string, string>("username", login),
                 new KeyValuePair<string, string>("password", password)
-            });
+            };
 
-            return await SendRequest(formContent);
+            using (var formContent = new FormUrlEncodedContent(list))
+            {
+                return await SendRequest(formContent);
+            }
         }
 
         public async Task<(OAuthToken, OAuthError)> RefreshToken(string token)
         {
-            var formContent = new FormUrlEncodedContent(new[]
+            var list = new List<KeyValuePair<string, string>>()
             {
                 new KeyValuePair<string, string>("grant_type", "refresh_token"),
                 new KeyValuePair<string, string>("client_id", ApiConstants.ClientId),
                 new KeyValuePair<string, string>("client_secret", ApiConstants.ClientSecret),
                 new KeyValuePair<string, string>("refresh_token", token)
-            });
+            };
 
-            return await SendRequest(formContent);
+            using (var formContent = new FormUrlEncodedContent(list))
+            {
+                return await SendRequest(formContent);
+            }
         }
 
         private async Task<(OAuthToken, OAuthError)> SendRequest(FormUrlEncodedContent formContent, CancellationTokenSource cancellationTokenSource = null)

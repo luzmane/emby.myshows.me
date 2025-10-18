@@ -23,3 +23,6 @@ Scrob tvshows to MyShows.me. This site is popular in the Russian-speaking commun
 
 * Плагин тестировался на версии 4.8.11
 * Собирался c .Net 7.0 для .NetStandard 2.0
+
+## TODO
+* тесты

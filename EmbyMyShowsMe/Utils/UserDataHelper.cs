@@ -104,12 +104,9 @@ namespace EmbyMyShowsMe.Utils
         {
             try
             {
-                foreach (var e in _episodes)
+                foreach (var e in _episodes.Where(e => e.SeenEpisodes.Any() || e.UnSeenEpisodes.Any()))
                 {
-                    if (e.SeenEpisodes.Any() || e.UnSeenEpisodes.Any())
-                    {
-                        await SendData(e);
-                    }
+                    await SendData(e);
                 }
             }
             catch (Exception ex)

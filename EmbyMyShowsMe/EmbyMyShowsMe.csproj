@@ -42,6 +42,11 @@
 
     <EmbeddedResource Include="Configuration\myshowsme.html" />
     <EmbeddedResource Include="Configuration\myshowsme.js" />
+    <EmbeddedResource Include="Configuration\myshowsme.html"/>
+    <EmbeddedResource Include="Configuration\myshowsme.js"/>
+
+    <EmbeddedResource Include="i18n\Configuration\ru.json"/>
+    <EmbeddedResource Include="i18n\Configuration\en-US.json"/>
   </ItemGroup>
 
 </Project>

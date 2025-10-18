@@ -1,6 +1,6 @@
 <div data-role="page" class="page type-interior" data-controller="__plugin/myshowsmejs" id="MyShowsConfigPage">
   <div class="content-primary">
-    <h1>MyShows TV Shows Tracker</h1>
+    <h1>${MyShows TV Shows Tracker}</h1>
     <form id="MyShowsConfigForm">
       <div id="login-container" hidden>
         <div class="inputContainer">
@@ -9,15 +9,15 @@
         <div class="inputContainer">
           <input is="emby-input" id="password" type="password" label="${LabelPassword}"/>
         </div>
-        <button id="login-button" is="emby-button" type="button" class="raised button-submit block"><span>${ButtonSignIn}</span></button>
+        <button id="login-button" is="emby-button" type="button" class="raised button-submit block"><span>${SignIn}</span></button>
       </div>
       <div id="config-container" hidden>
-        <h3>Hello, <b id="linked-account">user</b>.</h3>
-        <button id="unlink-button" is="emby-button" type="button" class="raised button-submit button-delete block"><span>${ButtonSignOut}</span></button>
+        <h3>${Hello}, <b id="linked-account">user</b>.</h3>
+        <button id="unlink-button" is="emby-button" type="button" class="raised button-submit button-delete block"><span>${SignOut}</span></button>
         <div class="inputContainer"></div>
         <div class="inputContainer">
           <input is="emby-input" id="ScrobbleAt" type="number" min="0" max="100" pattern="[0-9]*" label="Scrobbling percentage:"/>
-          <div class="fieldDescription">Percentage after which to scrobble</div>
+          <div class="fieldDescription">${Percentage after which to scrobble}</div>
         </div>
         <div>
           <button is="emby-button" type="submit" class="raised button-submit block"><span>${Save}</span></button>

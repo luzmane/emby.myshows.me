@@ -26,8 +26,8 @@
     <option name="AUTO_ATTACH_CHILDREN" value="0" />
     <option name="RUNTIME_TYPE" value="coreclr" />
     <method v="2">
-      <option name="Build" default="false" projectName="EmbyKinopoiskRu" projectPath="$PROJECT_DIR$/EmbyKinopoiskRu/EmbyKinopoiskRu.csproj" />
-      <option name="RunConfigurationTask" enabled="true" run_configuration_name="UpdatePluginOnServer" run_configuration_type="ShConfigurationType" />
+      <option name="Build" default="false" projectName="EmbyMyShowsMe" projectPath="$PROJECT_DIR$/EmbyMyShowsMe/EmbyMyShowsMe.csproj" />
+      <option name="RunConfigurationTask" enabled="false" run_configuration_name="UpdatePluginOnServer" run_configuration_type="ShConfigurationType" />
     </method>
   </configuration>
 </component>

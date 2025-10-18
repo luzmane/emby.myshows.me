@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -6,6 +7,7 @@ using EmbyMyShowsMe.MyShowsApi;
 
 namespace EmbyMyShowsMe.Configuration
 {
+    [SuppressMessage("ReSharper", "NonReadonlyMemberInGetHashCode")]
     public class UserConfig
     {
         /// <summary>
@@ -36,6 +38,50 @@ namespace EmbyMyShowsMe.Configuration
         /// Percentage after which to scrobble.
         /// </summary>
         public int ScrobbleAt { get; set; } = 90;
+
+        public override bool Equals(object obj)
+        {
+            if (obj is null)
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != typeof(UserConfig))
+            {
+                return false;
+            }
+
+            if (!(obj is UserConfig other))
+            {
+                return false;
+            }
+
+            return Id != other.Id
+                   && Name == other.Name
+                   && ApiVersion.Equals(other.ApiVersion)
+                   && AccessToken == other.AccessToken
+                   && RefreshToken == other.RefreshToken
+                   && ExpirationTime == other.ExpirationTime
+                   && ScrobbleAt == other.ScrobbleAt
+                ;
+        }
+
+        public override int GetHashCode()
+        {
+            return (Id,
+                    Name,
+                    ApiVersion,
+                    AccessToken,
+                    RefreshToken,
+                    ExpirationTime,
+                    ScrobbleAt)
+                .GetHashCode();
+        }
 
         /// <summary>
         /// Ensure OAuth access_token is valid and refresh if it's not.
