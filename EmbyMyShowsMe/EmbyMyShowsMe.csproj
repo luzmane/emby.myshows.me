@@ -40,13 +40,14 @@
   <ItemGroup>
     <EmbeddedResource Include="thumb.png"/>
 
-    <EmbeddedResource Include="Configuration\myshowsme.html" />
-    <EmbeddedResource Include="Configuration\myshowsme.js" />
     <EmbeddedResource Include="Configuration\myshowsme.html"/>
     <EmbeddedResource Include="Configuration\myshowsme.js"/>
 
     <EmbeddedResource Include="i18n\Configuration\ru.json"/>
     <EmbeddedResource Include="i18n\Configuration\en-US.json"/>
+
+    <EmbeddedResource Include="i18n\ScheduledTasks\MyShowsMeNewVersion\ru.json"/>
+    <EmbeddedResource Include="i18n\ScheduledTasks\MyShowsMeNewVersion\en-US.json"/>
   </ItemGroup>
 
 </Project>
